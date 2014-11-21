@@ -1,0 +1,1 @@
+java -cp config;dist/TestBristamatic.jar;libs/spring.jar;libs/commons-logging.jar;libs/log4j-1.2.15.jar com.baristamatic.ui.Main

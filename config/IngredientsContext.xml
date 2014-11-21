@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Specify Ingredients and InventoryEntries -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="restockCount" class="java.lang.Integer">
+		<constructor-arg value="10" />
+	</bean>
+
+	<!-- Coffee -->
+	<bean id="coffeeIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="coffee" />
+		<constructor-arg value=".75" />
+	</bean>
+
+	<bean id="coffeeInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Coffee" />
+		<constructor-arg value="coffee" />
+		<constructor-arg ref="coffeeIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Decaf Coffee -->
+	<bean id="decafCoffeeIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="decafCoffee" />
+		<constructor-arg value=".75" />
+	</bean>
+
+	<bean id="decafCoffeeInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Decaf Coffee" />
+		<constructor-arg value="decafCoffee" />
+		<constructor-arg ref="decafCoffeeIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Sugar -->
+	<bean id="sugarIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="sugar" />
+		<constructor-arg value=".25" />
+	</bean>
+
+	<bean id="sugarInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Sugar" />
+		<constructor-arg value="sugar" />
+		<constructor-arg ref="sugarIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Cream -->
+	<bean id="creamIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="cream" />
+		<constructor-arg value=".25" />
+	</bean>
+
+	<bean id="creamInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Cream" />
+		<constructor-arg value="cream" />
+		<constructor-arg ref="creamIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Steamed Milk -->
+	<bean id="steamedMilkIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="steamedMilk" />
+		<constructor-arg value=".35" />
+	</bean>
+
+	<bean id="steamedMilkInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Steamed Milk" />
+		<constructor-arg value="steamedMilk" />
+		<constructor-arg ref="steamedMilkIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Foamed Milk -->
+	<bean id="foamedMilkIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="foamedMilk" />
+		<constructor-arg value=".35" />
+	</bean>
+
+	<bean id="foamedMilkInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Foamed Milk" />
+		<constructor-arg value="foamedMilk" />
+		<constructor-arg ref="foamedMilkIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Espresso -->
+	<bean id="espressoIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="espresso" />
+		<constructor-arg value="1.10" />
+	</bean>
+
+	<bean id="espressoInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Espresso" />
+		<constructor-arg value="espresso" />
+		<constructor-arg ref="espressoIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Cocoa -->
+	<bean id="cocoaIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="cocoa" />
+		<constructor-arg value=".90" />
+	</bean>
+
+	<bean id="cocoaInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Cocoa" />
+		<constructor-arg value="cocoa" />
+		<constructor-arg ref="cocoaIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+
+	<!-- Whipped Cream -->
+	<bean id="whippedCreamIngredient" class="com.baristamatic.domain.Ingredient">
+		<constructor-arg value="whippedCream" />
+		<constructor-arg value="1.00" />
+	</bean>
+
+	<bean id="whippedCreamInventoryEntry" class="com.baristamatic.domain.InventoryEntry">
+		<constructor-arg value="Whipped Cream" />
+		<constructor-arg value="whippedCream" />
+		<constructor-arg ref="whippedCreamIngredient" />
+		<constructor-arg ref="restockCount" />
+	</bean>
+</beans>

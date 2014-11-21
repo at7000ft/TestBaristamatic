@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project name="TestBristamatic" default="all" basedir=".">
+
+	<!-- Initialization variables -->
+	<property name="thirdparty.lib.dir" value="libs" />
+	<property name="src.dir" value="src" />
+	<property name="test.dir" value="test" />
+	<property name="jar.file" value="${ant.project.name}.jar" />
+	<property name="build.dir" value="build" />
+	<property name="dist.dir" value="dist" />
+	<property name="lib.dir" value="lib" />
+	<property name="config.dir" value="config" />
+
+	<path id="compile.classpath">
+		<fileset dir="${thirdparty.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- ====================================== -->
+	<target name="all" depends="jar" description="Does the whole enchilada" />
+
+
+	<!-- ====================================== -->
+	<target name="clean" description="Deletes compiled and generated code">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+
+	<!-- ====================================== -->
+	<target name="compile" description="Compiles the Java code">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.dir};${test.dir}" destdir="${build.dir}" debug="on">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<!-- ====================================== -->
+	<target name="jar" depends="compile">
+		<mkdir dir="${dist.dir}" />
+		<jar destfile="${dist.dir}/${jar.file}">
+			<fileset dir="${build.dir}" />
+		</jar>
+	</target>
+</project>

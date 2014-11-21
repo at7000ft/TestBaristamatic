@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="config"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="libs/spring.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging.jar"/>
+	<classpathentry kind="lib" path="libs/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="libs/ejb3-persistence.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

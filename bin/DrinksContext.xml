@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Specify Drinks -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+
+	<bean id="coffeeDrink" class="com.baristamatic.domain.Drink">
+		<constructor-arg value="1" />
+		<constructor-arg value="coffe" />
+		<constructor-arg value="Coffee" />
+		<constructor-arg ref="inventoryManager" />
+		<constructor-arg>
+			<map>
+				<entry key="coffee" value="3" />
+				<entry key="sugar" value="1" />
+				<entry key="cream" value="1" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="decafCoffeeDrink" class="com.baristamatic.domain.Drink">
+		<constructor-arg value="2" />
+		<constructor-arg value="decafCoffee" />
+		<constructor-arg value="Decaf Coffee" />
+		<constructor-arg ref="inventoryManager" />
+		<constructor-arg>
+			<map>
+				<entry key="decafCoffee" value="3" />
+				<entry key="sugar" value="1" />
+				<entry key="cream" value="1" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="caffeLatteDrink" class="com.baristamatic.domain.Drink">
+		<constructor-arg value="3" />
+		<constructor-arg value="caffeLatte" />
+		<constructor-arg value="Caffe Latte" />
+		<constructor-arg ref="inventoryManager" />
+		<constructor-arg>
+			<map>
+				<entry key="espresso" value="2" />
+				<entry key="steamedMilk" value="1" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="caffeAmericanoDrink" class="com.baristamatic.domain.Drink">
+		<constructor-arg value="4" />
+		<constructor-arg value="caffeAmericano" />
+		<constructor-arg value="Caffe Americano" />
+		<constructor-arg ref="inventoryManager" />
+		<constructor-arg>
+			<map>
+				<entry key="espresso" value="3" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="caffeMochaDrink" class="com.baristamatic.domain.Drink">
+		<constructor-arg value="5" />
+		<constructor-arg value="caffeMocha" />
+		<constructor-arg value="Caffe Mocha" />
+		<constructor-arg ref="inventoryManager" />
+		<constructor-arg>
+			<map>
+				<entry key="espresso" value="1" />
+				<entry key="cocoa" value="1" />
+				<entry key="steamedMilk" value="1" />
+				<entry key="whippedCream" value="1" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="cappuccinoDrink" class="com.baristamatic.domain.Drink">
+		<constructor-arg value="6" />
+		<constructor-arg value="cappiccino" />
+		<constructor-arg value="Cappuccio" />
+		<constructor-arg ref="inventoryManager" />
+		<constructor-arg>
+			<map>
+				<entry key="espresso" value="2" />
+				<entry key="steamedMilk" value="1" />
+				<entry key="foamedMilk" value="1" />
+			</map>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="testDrink" class="com.baristamatic.domain.Drink">
+      <constructor-arg value="7" />
+      <constructor-arg value="testDrink" />
+      <constructor-arg value="TestDrink" />
+      <constructor-arg ref="inventoryManager" />
+      <constructor-arg>
+         <map>
+            <entry key="espresso" value="2" />
+            <entry key="steamedMilk" value="2" />
+            <entry key="foamedMilk" value="2" />
+         </map>
+      </constructor-arg>
+   </bean>
+
+	<bean id="drinkMap" class="java.util.TreeMap">
+		<constructor-arg>
+			<map>
+				<entry key="coffee" value-ref="coffeeDrink" />
+				<entry key="decafCoffee" value-ref="decafCoffeeDrink" />
+				<entry key="caffeLatte" value-ref="caffeLatteDrink" />
+				<entry key="caffeAmericano" value-ref="caffeAmericanoDrink" />
+				<entry key="caffeMocha" value-ref="caffeMochaDrink" />
+				<entry key="cappiccino" value-ref="cappuccinoDrink" />
+				<entry key="testDrink" value-ref="testDrink" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="drinkManager" class="com.baristamatic.dao.MemoryDrinkManagerDao">
+		<constructor-arg ref="drinkMap" />
+	</bean>
+</beans>
