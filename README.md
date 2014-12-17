@@ -1,6 +1,6 @@
 ###Java cli implementation of the Baristamatic coffee shop inventory system.
 
-####Author: Rick Holland
+#####Author: Rick Holland
 
 System Dependencies: Windows XP or newer machine with a Java 1.5 or newer JDK/JRE installed. Path must reference
 the JDK/bin or JRE/bin to run on a command window, or Eclipse 3.3 or newer installed to run on Eclipse,
