@@ -1,4 +1,5 @@
-Baristamatic Program
+Java cli implementation of the Baristamatic coffee shop inventory system.
+=========================================================================
 Author: Rick Holland
 
 System Dependencies: Windows XP or newer machine with a Java 1.5 or newer JDK/JRE installed. Path must reference
@@ -11,4 +12,6 @@ The TestBaristamatic folder is an Eclipse Project, import the project into Eclip
 src/com/baristamatic.ui.Main class and right click->Run As->Java Application.
 
 To run on Windows command line:
+```
 cd to the install TestBaristamatic folder and run 'run.bat'.
+```
